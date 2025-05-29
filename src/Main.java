@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Main {
     private static final Scanner sc = new Scanner(System.in);
+    private static String continueMethod ="";
     public static void main(String[] args) {
         System.out.print("Choose method : ");
         int method = getInput();
@@ -14,6 +15,10 @@ public class Main {
             case 2:
                 System.out.println("Exercise 2");
                 calculateBasicOperations();
+                break;
+            case 3:
+                System.out.println("Exercise 3");
+                bankInterest();
                 break;
             default:
                 System.out.println("Invalid choice");
@@ -67,4 +72,25 @@ public class Main {
         }
     }
 
+    private static void bankInterest(){
+        final double rate = 0.8;
+        do {
+            System.out.print("Enter the principal amount: ");
+            double principal = sc.nextDouble();
+
+            System.out.print("Enter the times : ");
+            double times = sc.nextDouble();
+
+            double interest = (principal * rate * times) / 100;
+
+            System.out.printf("The interest after %.1f year(s) is: %.2f VND\n", times, interest);
+
+
+            System.out.print("Do you want to continue? (y/n): ");
+            sc.nextLine();
+            continueMethod = sc.nextLine();
+
+        } while (continueMethod.equalsIgnoreCase("y"));
+        System.out.println("Program finished.");
+    }
 }
