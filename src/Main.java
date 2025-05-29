@@ -20,6 +20,10 @@ public class Main {
                 System.out.println("Exercise 3");
                 bankInterest();
                 break;
+            case 4:
+                System.out.println("Exercise 4");
+                checkEvenOrOdd();
+                break;
             default:
                 System.out.println("Invalid choice");
                 break;
@@ -91,6 +95,24 @@ public class Main {
             continueMethod = sc.nextLine();
 
         } while (continueMethod.equalsIgnoreCase("y"));
+        System.out.println("Program finished.");
+    }
+
+    private static void checkEvenOrOdd(){
+
+        do{
+            System.out.print("Enter number: ");
+            int number = getInput();
+
+            if(number % 2 == 0){
+                System.out.println("Even");
+            } else {
+                System.out.println("Odd");
+            }
+            System.out.print("Do you want to continue? (y/n): ");
+            continueMethod = sc.nextLine();
+
+        }while(continueMethod.equalsIgnoreCase("y"));
         System.out.println("Program finished.");
     }
 }
