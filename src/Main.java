@@ -110,6 +110,7 @@ public class Main {
                 System.out.println("Odd");
             }
             System.out.print("Do you want to continue? (y/n): ");
+            sc.nextLine();
             continueMethod = sc.nextLine();
 
         }while(continueMethod.equalsIgnoreCase("y"));
